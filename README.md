@@ -1,3 +1,3 @@
 # JavaScript-GoIt
-Advanced course JS (Go IT)
-HomeWorks
+##Advanced course JS (Go IT)
+###HomeWorks
