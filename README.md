@@ -1,5 +1,5 @@
 # JavaScript-GoIt
 
-##Advanced course JS (Go IT)
+## Advanced course JS (Go IT)
 
-###HomeWorks
+### HomeWorks
