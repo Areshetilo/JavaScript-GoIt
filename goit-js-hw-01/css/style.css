@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    background: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    border-style: none;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
