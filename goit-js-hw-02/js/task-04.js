@@ -1,9 +1,11 @@
 const formatString = function(string) {
-    if (string.length > 40) {
-        return `${string.slice(0, 39)}...`;
-    } else {
-        return string;
-    }
+    // if (string.length > 40) {
+    //     return `${string.slice(0, 39)}...`;
+    // } else {
+    //     return string;
+    // }
+
+    return string.length > 40 ? string : `${string.slice(0, 39)}...`;
 };
 
 /*
