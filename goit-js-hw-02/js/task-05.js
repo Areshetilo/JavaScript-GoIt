@@ -6,7 +6,7 @@ const checkForSpam = function(message) {
         // }
         // return false;
 
-        return (messageArray.includes('spam')) || (messageArray.includes('sale'));
+        return (messageArray.includes('spam') || messageArray.includes('sale'));
 
 };
 
