@@ -17,3 +17,7 @@ userChanges('happy', 'skydiving', false);
 
 
 console.log('after:\n', user);
+
+for (let key in user) {
+    console.log(`${key}: ${user[key]}`);
+}
