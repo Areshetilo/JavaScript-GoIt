@@ -14,10 +14,51 @@ const Transaction = {
 const account = {
     balance: 0,
     transactions: [],
-    createTransaction(amount, type) {},
-    deposit(amount) {},
-    withdraw(amount) {},
-    getBalance() {},
-    getTransactionDetails(id) {},
-    getTransactionTotal(type) {},
+    createTransaction(amount, type) {
+
+        return {
+            id: this.transactions.length + 1,
+            amount: amount,
+            type: type,
+        }
+
+    },
+    deposit(amount) {
+        this.balance += amount;
+        this.transactions.push(this.createTransaction(amount, Transaction.DEPOSIT));
+        return `На счет добавлена сумма ${amount} гривен`
+    },
+    withdraw(amount) {
+        if (amount < this.balance) {
+            this.balance -= amount;
+            this.transactions.push(this.createTransaction(amount, Transaction.WITHDRAW));
+            return `Сумма снятия ${amount} гривен`;
+        }
+        return `Недостаточно средств на счету`;
+    },
+    getBalance() {
+        return `На вашем счету ${this.balance} гривен`;
+    },
+    getTransactionDetails(id) {
+        return  this.transactions.find(item => item.id === id);
+    },
+    getTransactionTotal(type) {
+        let totalTransaction = 0;
+        for (const obj of this.transactions) {
+            if (obj.type === type) {
+                totalTransaction += obj.amount;
+            }
+        }
+        return `Общая сумма по ${type} составляет ${totalTransaction}`;
+    },
 };
+
+console.log(account.deposit(1000));
+console.log(account.deposit(1000));
+console.log(account.transactions);
+console.log(account.withdraw(543));
+console.log(account.withdraw(53));
+console.log(account.transactions);
+console.log(account.getBalance());
+console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+console.log(account.getTransactionTotal(Transaction.WITHDRAW));
