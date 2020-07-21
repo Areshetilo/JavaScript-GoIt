@@ -5,7 +5,7 @@ const user = {
     premium: true,
 };
 
-console.log('before:\n', user);
+console.log('before:', user);
 
 const userChanges = (mood, hobby, premium) => {
     user.mood = mood;
@@ -16,8 +16,9 @@ const userChanges = (mood, hobby, premium) => {
 userChanges('happy', 'skydiving', false);
 
 
-console.log('after:\n', user);
+console.log('after:', user);
 
-for (let key in user) {
-    console.log(`${key}: ${user[key]}`);
+for (let key of Object.keys(user)) {
+    console.log(`${key} : ${user[key]}`);
 }
+
