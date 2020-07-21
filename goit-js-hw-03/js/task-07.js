@@ -26,18 +26,18 @@ const account = {
     deposit(amount) {
         this.balance += amount;
         this.transactions.push(this.createTransaction(amount, Transaction.DEPOSIT));
-        return `На счет добавлена сумма ${amount} гривен`
+        return `На счет добавлена сумма ${amount} грн`
     },
     withdraw(amount) {
         if (amount < this.balance) {
             this.balance -= amount;
             this.transactions.push(this.createTransaction(amount, Transaction.WITHDRAW));
-            return `Сумма снятия ${amount} гривен`;
+            return `Сумма снятия ${amount} грн`;
         }
         return `Недостаточно средств на счету`;
     },
     getBalance() {
-        return `На вашем счету ${this.balance} гривен`;
+        return `На вашем счету ${this.balance} грн`;
     },
     getTransactionDetails(id) {
         return  this.transactions.find(item => item.id === id);
@@ -49,7 +49,7 @@ const account = {
                 totalTransaction += obj.amount;
             }
         }
-        return `Общая сумма по ${type} составляет ${totalTransaction}`;
+        return `Общая сумма по ${type} составляет ${totalTransaction} грн`;
     },
 };
 
