@@ -1,6 +1,5 @@
 const countProps = function(obj) {
-    const objNumOfProperties = Object.keys(obj);
-    return objNumOfProperties.length;
+    return Object.keys(obj).length;
 };
 
 /*
