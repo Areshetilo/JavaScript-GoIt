@@ -5,9 +5,9 @@ const products = [
     { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-const calculateTotalPrice = function(allProdcuts, productName) {
+const calculateTotalPrice = function(allProducts, productName) {
     let total = 0;
-    for (const product of allProdcuts) {
+    for (const product of allProducts) {
         if (product.name.includes(productName)) {
             total += product.price * product.quantity;
         }
