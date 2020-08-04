@@ -1,13 +1,4 @@
 class Car {
-    constructor({name ='car', speed = 0, price = 0, maxSpeed = 0, isOn = false, distance = 0}) {
-        this.name = name;
-        this.speed = speed;
-        this.price = price;
-        this.maxSpeed = maxSpeed;
-        this.isOn = isOn;
-        this.distance = distance;
-    }
-
     static getSpecs(car) {
         console.log(`
         Car: ${car.name}
@@ -17,12 +8,58 @@ class Car {
         Distance: ${car.distance}
         Price: ${car.price}`)
     }
+
+    constructor({name ='car', speed = 0, price = 0, maxSpeed = 0, isOn = false, distance = 0}) {
+        this.name = name;
+        this._speed = speed;
+        this._price = price;
+        this.maxSpeed = maxSpeed;
+        this.isOn = isOn;
+        this.distance = distance;
+    }
+
+    get price() {
+        return this._price;
+    }
+
+    set price(newPrice) {
+        this._price = newPrice;
+    }
+
+    get speed () {
+        return this._speed;
+    }
+
+    set speed(value) {
+        this._speed = value;
+    }
+
+    turnOn() {
+        this.isOn = true;
+        console.log(`Двигатель включен`);
+    }
+
+    turnOff() {
+        this.isOn = false;
+        this.speed = 0;
+        console.log(`Двигатель выключен`);
+    }
+
 }
 
 const car = new Car ({name: 'Ford', maxSpeed: 200, price: 2000 });
 
 console.log(car);
 Car.getSpecs(car);
+console.log(`Цена авто: ${car.price} $`);
+car.price = 4000;
+console.log(`Цена авто: ${car.price} $`);
+console.log(`Текущая скорость: ${car.speed}км/час`);
+car.turnOn();
+car.speed = 100;
+console.log(`Текущая скорость: ${car.speed}км/час`);
+car.turnOff();
+console.log(`Текущая скорость: ${car.speed}км/час`);
 
 
 // Напиши класс Car с указанными свойствами и методами.
