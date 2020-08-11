@@ -128,9 +128,9 @@ console.group('\t💥 TASK-10 \t💥');
 // при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 
 const getSortedUniqueSkills = users => {
-    return new Set(users.reduce((acc, user) => {
-        acc.push(...user.skills)
-    return acc}, []).sort());
+    return new Set(users.reduce((accSkills, user) => {
+        accSkills.push(...user.skills)
+    return accSkills}, []).sort());
 };
 
 console.log(getSortedUniqueSkills(users));
