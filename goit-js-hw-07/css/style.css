@@ -1,0 +1,13 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+.task03-gallery {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+ul {
+    margin-bottom: 20px;
+}
