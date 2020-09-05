@@ -11,7 +11,6 @@ const refs = {
 createGallery();
 refs.gallery.addEventListener('click', onClickGalleryImg);
 refs.closeModal.addEventListener('click', closeModal);
-refs.overlay.addEventListener('click', onClickOverlay);
 document.addEventListener('keyup', closeModalEscape);
 
 function createGallery() {
