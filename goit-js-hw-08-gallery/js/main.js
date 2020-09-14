@@ -11,7 +11,7 @@ const refs = {
 createGallery();
 refs.gallery.addEventListener('click', onClickGalleryImg);
 refs.closeModal.addEventListener('click', closeModal);
-document.addEventListener('keyup', closeModalEscape);
+document.addEventListener('keydown', onKeyPress);
 
 function createGallery() {
     let index = 0;
@@ -50,6 +50,7 @@ function onClickGalleryImg(event) {
 
     setOriginalImgUrl(originalImgURL);
     setOriginalImgAlt(originalImgALT);
+
 }
 
 function openModal() {
@@ -61,10 +62,19 @@ function closeModal() {
     deleteOriginalImgUrl();
 }
 
-function closeModalEscape(event) {
+function onKeyPress(event) {
+
     if(event.code === "Escape") {
         closeModal();
     }
+}
+
+function rightKeyPress() {
+
+}
+
+function leftKeyPress() {
+
 }
 
 function setOriginalImgUrl(url) {
@@ -79,3 +89,4 @@ function deleteOriginalImgUrl() {
 function setOriginalImgAlt(alt) {
     refs.originalImg.setAttribute("alt", alt)
 }
+
